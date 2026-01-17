@@ -89,3 +89,11 @@ print("Ventas del primer trimestre del producto C: ", sales_first_tree_months_pr
 boolean_flag = total_sales > 800
 high_sales_months = months[boolean_flag]
 print("Meses con ventas totales superiores a 800 unidades:", high_sales_months)
+
+even_indices = np.arange(0, 12, 2) #(inicio, fin, paso)
+sales_even_months_product_A = product_A[even_indices]
+print("Ventas del producto A en meses con índices pares:", sales_even_months_product_A)
+sales_even_months_product_B = product_B[even_indices]
+print("Ventas del producto B en meses con índices pares:", sales_even_months_product_B)
+sales_even_months_product_C = product_C[even_indices]
+print("Ventas del producto C en meses con índices pares:", sales_even_months_product_C)
