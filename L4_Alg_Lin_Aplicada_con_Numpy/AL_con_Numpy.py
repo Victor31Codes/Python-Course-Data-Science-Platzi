@@ -25,3 +25,4 @@ solucion = np.linalg.solve(A, B)
 print("Solución de Ax = B:\n", solucion)  # Solving the linear equation Ax = B
 
 
+
