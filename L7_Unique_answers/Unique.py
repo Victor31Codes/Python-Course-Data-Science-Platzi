@@ -26,4 +26,4 @@ print("Copy X (slice of X):", copy_x)
 
 array_x[1:3] = [10,11]
 print(array_x)  # Modified Array X
-print("Copy X after modifying X:", copy_x)  # Copy X does not reflect changes in Array X
+print("View Y after modifying X:", view_y)  # View Y reflects changes in Array X
