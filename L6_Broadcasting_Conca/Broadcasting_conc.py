@@ -30,3 +30,10 @@ array_c = np.arange(1,10)
 split_array = np.split(array_c,3)  # Split array_c into 3 equal parts  
 print("Original Array C:", array_c)
 print("Split Array into 3 parts:", split_array)
+
+
+array_d = np.random.randint(100,500, size=(3,3))
+print("Executing the array_d \n", array_d)
+
+split_array_d = np.split(array_d,3) 
+print("Executing the split array_d \n", split_array_d)
