@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-path = 'C:\\Users\\Manolo\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv'# We import the dataset pd.read_csv
+path = 'C:\\Users\\vtorr\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv'# We import the dataset pd.read_csv
 retail_data = pd.read_csv(path)
 print(retail_data.head())
 print(type(retail_data))
@@ -30,6 +30,14 @@ print(dt_from_dict_list)
 data = {'ID': [1,2,3],'Name':['Santiago','Nicolas','Carlos'], 'Age': [21,23,21]}
 dt_from_dict = pd.DataFrame(data)
 print(dt_from_dict)
+
+data = {
+    'ID': pd.Series([3,4,5]),
+    'Name': pd.Series(['Trinity','Lilly','Gabi']),
+    'Age' : pd.Series([21,21,25])
+}
+dt_from_series_list = pd.DataFrame(data)
+print(dt_from_series_list)
 # path_gym = 'C:\\Users\\vtorr\\OneDrive\\Documentos\\PythonFullCourse\\daily_gym_attendance_workout_data.csv'
 # gym_data = pd.read_csv(path_gym)
 # print(gym_data.head())  # Display the first few rows of the DataFrame

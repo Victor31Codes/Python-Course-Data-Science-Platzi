@@ -66,3 +66,9 @@ print("Máximo de Quantity:", max_value)
 
 prod_value = retail_data['Quantity'].prod()
 print("Producto de Quantity:", prod_value)
+
+daily_sales = pd.Series([10,20,None,40,50])
+sum_daily_sales = daily_sales.sum()
+print("La suma total de los valores internos es:",sum_daily_sales)
+count_daily_sales = daily_sales.count()
+print("El conteo total de los valores internos es:",count_daily_sales)
