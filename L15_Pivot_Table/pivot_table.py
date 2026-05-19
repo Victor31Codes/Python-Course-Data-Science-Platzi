@@ -1,6 +1,6 @@
 import pandas as pd
 
-sales_data = pd.read_csv('C:\\Users\\vtorr\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv')
+sales_data = pd.read_csv('C:\\Users\\Manolo\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv')
 
 pivot_table = pd.pivot_table(sales_data, values = 'Quantity', index = 'Country', columns = 'StockCode', aggfunc = 'sum')
 print(pivot_table.head()) # Create a pivot table with 'Country' as index, 'StockCode' as columns, and the sum of 'Quantity' as values

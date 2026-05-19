@@ -38,3 +38,6 @@ df4 = pd.DataFrame({
 }) 
 
 vertical_concat = pd.concat(df1,df2)
+horizontal_concat = pd.concat(df1,df2, axis=1)
+
+joined = df3.join(df4, how='inner')
