@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('C:\\Users\\vtorr\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv')
+df = pd.read_csv('C:\\Users\\Manolo\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv')
 
 df['TotalPrice'] = df['Quantity'] * df['UnitPrice'] #Creating a new column 'TotalPrice' by multiplying 'Quantity' and 'UnitPrice'
 print("DataFrame with new 'TotalPrice' column:\n", df.head())
