@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Configurar el tamaño del grafico
+
+plt.figure(figsize=(8,6))
+
+exam_scores_student_1 = [55,60,65,65,70,75,80,85]
+exam_scores_student_2 = [50,58,63,69,74,78,83,86]
+hours = [2,3,4,5,6,7,8,9]
+
+plt.scatter(hours, exam_scores_student_1,marker = 'o', color='green',linestyle='-',linewidth=2,label='Estudiante 1')
+plt.scatter(hours, exam_scores_student_2,marker = 's', color='red',linestyle='--',linewidth=2,label='Estudiante 2')
+
+plt.plot(hours, exam_scores_student_1,marker = 'o', color='green',linestyle='-',linewidth=2,label='Estudiante 1')
+plt.plot(hours, exam_scores_student_2,marker = 's', color='red',linestyle='--',linewidth=2,label='Estudiante 2')
+
+plt.title('Relación entre horas estudiadas y el puntaje')
+plt.xlabel('Horas estudiadas')
+plt.ylabel('Puntaje del examen')
+plt.show()

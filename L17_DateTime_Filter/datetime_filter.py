@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-sales_data = pd.read_csv('C:\\Users\\vtorr\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv')
+sales_data = pd.read_csv('C:\\Users\\Manolo\\OneDrive\\Documentos\\PythonFullCourse\\online_retail.csv')
 
 sales_data['InvoiceDate'] = pd.to_datetime(sales_data['InvoiceDate'])
 print(sales_data.info())
