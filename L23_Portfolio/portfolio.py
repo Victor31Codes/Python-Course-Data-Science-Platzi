@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Cargar el dataset
 file_path = 'online_retail.csv'
@@ -73,3 +74,52 @@ df_cleaned_lambda
 
 sales_by_month = data_cleaned.groupby(["Year", "Month"])["TotalAmount"].sum()
 print(sales_by_month)
+
+total_returns = data_cleaned[data_cleaned['Quantity'] < 0].shape[0]
+print(total_returns) # Se esta imprimiendo las devoluciones, por eso se selecciona la columna Quantity, valores que sean negativos demuestran devoluciones.
+
+total_non_returns = data_cleaned[data_cleaned['Quantity'] >= 0].shape[0]
+print(total_non_returns) # Por el contrario aqui no se imprimen las devoluciones
+
+labels = ['Devoluciones','No Devoluciones']
+sizes = [total_returns,total_non_returns]
+colors = ['lightcoral','lightblue']
+
+plt.figure(figsize=(8,8))
+plt.pie(sizes,labels =labels,colors =colors,startangle=140)
+
+plt.title('Porcentaje de transacciones con y sin devolución')
+plt.show()
+
+#Crear una columna categórica basada en el monto total de la transaccion (ejemplo: 'Low', 'Medium','High')
+def categorize_total_amount(amount):
+    if amount < 20:
+        return 'Low'
+    elif 20 <= amount < 100:
+        return 'Medium'
+    else:
+        return 'high'
+    
+data_cleaned['AmountCategory'] = data_cleaned['TotalAmount'].apply(categorize_total_amount)
+
+#Mostrar las primeras filas de las nuevas columnas
+print(data_cleaned.head())
+
+plt.figure(figsize=(12,6))
+data_cleaned.groupby(['Year','Month']['TotalAmount'].sum().plot(kind='bar'))
+plt.title('Distribución de ventas por mes y por año')
+plt.xlabel('Año','Mes')
+plt.ylabel('Ventas Totales')
+plt.show()
+
+top_products = data_cleaned.groupby('StockCode')['Quantity'].sum().sort_values(ascending=False).head(10)
+top_products = top_products.reset_index()
+top_products = pd.merge(top_products,data_cleaned[['StockCode','Description']].drop_duplicates(),on='StockCode',how='left')
+
+plt.figure(figsize=(12,6))
+plt.barh(top_products['Description'],top_products['Quantity'])
+plt.title('Top de productos')
+plt.xlabel('Cantidad Vendida')
+plt.ylabel('Producto')
+plt.gca().invert_yaxis
+plt.show()
